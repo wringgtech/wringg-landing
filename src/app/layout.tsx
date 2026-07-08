@@ -51,9 +51,14 @@ export const metadata: Metadata = {
     images: ["/LOGO+TEXT.jpg"],
   },
   icons: {
-    icon: "/LOGO.jpg",
-    shortcut: "/LOGO.jpg",
-    apple: "/LOGO.jpg",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -66,6 +71,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${jakarta.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
