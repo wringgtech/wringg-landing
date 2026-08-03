@@ -16,6 +16,14 @@ const HOST_CTA_URL =
 const SUPPORT_CTA_URL =
   "https://wa.me/918438508211?text=Hi%20Wringg%2C%20I%20need%20help%20with%20clothing-care%20service.";
 
+const landingImages = {
+  logoWordmark: "/LOGO+TEXT.jpg?v=2",
+  localCare: "/1 (2).png?v=2",
+  hostMachine: "/1.WEBP.png?v=2",
+  hostNetwork: "/1 (3).png?v=2",
+  hero: "/2.WEBP.png?v=2",
+} as const;
+
 const customerActionUrl = ENABLE_APP_DOWNLOAD
   ? CUSTOMER_APP_DOWNLOAD_URL
   : CUSTOMER_CTA_URL;
@@ -33,19 +41,19 @@ const uspCards = [
     title: "Not a laundry counter",
     description:
       "A neighbourhood-powered clothing care network built around nearby hosts and local trust.",
-    image: "/1 (2).png",
+    image: landingImages.localCare,
   },
   {
     title: "Make money with your washing machine",
     description:
       "Turn idle washing capacity into income by becoming a WRINGG host in your community.",
-    image: "/1.WEBP.png",
+    image: landingImages.hostMachine,
   },
   {
     title: "Built like a local host network",
     description:
       "Distributed hosts, simple coordination, and trust layered into one hyperlocal flow.",
-    image: "/1 (3).png",
+    image: landingImages.hostNetwork,
   },
 ];
 
@@ -107,7 +115,7 @@ function HeroVisual() {
       <div className="relative rounded-[1.8rem] border border-white/80 bg-white/75 p-3 shadow-[0_28px_80px_rgba(15,62,92,0.14)] backdrop-blur">
         <div className="relative aspect-[1.08] overflow-hidden rounded-[1.45rem] bg-sky-50 sm:aspect-[1.18]">
           <Image
-            src="/2.WEBP.png"
+            src={landingImages.hero}
             alt="Wringg local host handing fresh clothes to a customer"
             fill
             sizes="(max-width: 1024px) 100vw, 52vw"
@@ -161,7 +169,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3.5 sm:px-8 lg:py-4">
           <Link href="#home" className="flex min-w-0 items-center">
             <Image
-              src="/LOGO+TEXT.jpg"
+              src={landingImages.logoWordmark}
               alt="Wringg logo and wordmark"
               width={226}
               height={56}
@@ -268,7 +276,7 @@ export default function Home() {
           <div className="grid h-full sm:grid-cols-[0.85fr_1.15fr]">
             <div className="relative min-h-64 bg-sky-50">
               <Image
-                src="/1.WEBP.png"
+                src={landingImages.hostMachine}
                 alt="Wringg host network"
                 fill
                 sizes="(max-width: 768px) 100vw, 28vw"
@@ -315,7 +323,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 py-9 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div className="flex min-w-0 flex-col gap-3">
             <Image
-              src="/LOGO+TEXT.jpg"
+              src={landingImages.logoWordmark}
               alt="Wringg logo and wordmark"
               width={190}
               height={48}
@@ -334,6 +342,7 @@ export default function Home() {
             <Link href="/refund" className="hover:text-sky-600">Refund Policy</Link>
             <Link href="/shipping" className="hover:text-sky-600">Shipping</Link>
             <Link href="/contact" className="hover:text-sky-600">Contact</Link>
+            <Link href="/delete-account" className="hover:text-sky-600">Delete Account</Link>
           </div>
         </div>
       </footer>

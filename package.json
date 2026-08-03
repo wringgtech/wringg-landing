@@ -7,6 +7,7 @@
     "build": "next build",
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
+    "pages:deploy": "wrangler deploy",
     "upload": "npm run build && wrangler version upload",
     "start": "next start",
     "lint": "eslint"
