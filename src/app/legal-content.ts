@@ -120,14 +120,22 @@ export const legalPages: Record<string, LegalPageContent> = {
   contact: {
     title: "Contact WRINGG",
     description: "Reach WRINGG for bookings, partner interest, and support.",
-    updated: "May 24, 2026",
+    updated: "October 27, 2026",
     sections: [
       {
         heading: "Support",
         body: [
           "WhatsApp or phone: +91 84385 08211",
-          "Email: hello@wringg.in",
-          "Location: BTM Layout, Bengaluru",
+          "Email: contact@wringg.in",
+          "Service area: BTM Layout, Bengaluru",
+        ],
+      },
+      {
+        heading: "Registered company address",
+        body: [
+          "WRINGG NETWORKS PRIVATE LIMITED",
+          "101, Oxford Towers, 139/88, HAL Old Airport Road,",
+          "Hulsur Bazaar, Bangalore North, Bengaluru - 560008",
         ],
       },
       {

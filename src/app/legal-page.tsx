@@ -51,7 +51,7 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
         <div className="mt-8 rounded-[1.5rem] bg-[#071f3f] p-6 text-white">
           <p className="font-black">Need help?</p>
           <p className="mt-2 text-sm leading-7 text-sky-50">
-            WhatsApp +91 84385 08211 or email hello@wringg.in.
+            WhatsApp +91 84385 08211 or email{" "}<a href="mailto:contact@wringg.in" className="underline">contact@wringg.in</a>.
           </p>
         </div>
       </section>

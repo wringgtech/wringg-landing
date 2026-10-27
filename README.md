@@ -4,16 +4,18 @@ Production-ready standalone landing page for WRINGG, built with Next.js, TypeScr
 
 ## Brand
 
-- Company: WRINGG
+- Company: WRINGG NETWORKS PRIVATE LIMITED
 - Tagline: Wash. Wear. Repeat.
 - Domain: wringg.in
 - Location: BTM Layout, Bengaluru
 - WhatsApp: +91 84385 08211
-- Email: hello@wringg.in
+- Email: contact@wringg.in
+- Registered address: 101, Oxford Towers, 139/88, HAL Old Airport Road, Hulsur Bazaar, Bangalore North, Bengaluru - 560008
 
 ## Routes
 
 - `/` - landing page
+- `/download` - shareable customer app smart link
 - `/privacy` - Privacy Policy
 - `/terms` - Terms & Conditions
 - `/refund` - Refund & Cancellation Policy
@@ -70,6 +72,17 @@ The site uses the current WRINGG brand assets from `public`:
 - Footer and metadata icon: `public/LOGO.jpg`
 - Generated page visuals: `public/1 (2).png`, `public/1 (3).png`, `public/1 (4).png`, `public/1 (5).png`, `public/1.WEBP.png`, `public/2.WEBP.png`
 
-## Pilot CTA Links
+## App download link
 
-The landing page is currently in pilot mode. Primary CTAs use WhatsApp prefilled flows for early customer pickup requests and host onboarding, with button text framed as product actions instead of WhatsApp actions. These can later be swapped for app deep links or form URLs in `src/app/page.tsx`.
+Share https://wringg.in/download in social profiles, messages, and QR codes.
+Android visitors automatically go to the customer Google Play listing.
+iPhone/iPad visitors go to the App Store once its verified URL is set in
+`src/lib/app-links.mjs` (`appStoreLinks.ios`). Until then they see booking
+support; desktop, unknown devices, and browsers without JavaScript see manual links.
+iPadOS desktop-style user agents are detected using touch support.
+
+Customer CTAs use this link; host onboarding continues through WhatsApp.
+This is a store-routing smart link, not an installed-app Universal Link.
+It works with the existing static Cloudflare deployment and needs no paid service.
+
+Run routing checks with `node --test tests/app-links.test.mjs`.

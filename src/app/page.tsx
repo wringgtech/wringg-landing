@@ -2,15 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-// CTA switch:
-// Keep false during pilot mode so primary actions use WhatsApp onboarding flows.
-// Set true after app links/APKs are ready, then replace the placeholder URLs below.
-const ENABLE_APP_DOWNLOAD = false;
-const CUSTOMER_APP_DOWNLOAD_URL = "#customer-app-link-coming-soon";
-const HOST_APP_DOWNLOAD_URL = "#host-app-link-coming-soon";
-
-const CUSTOMER_CTA_URL =
-  "https://wa.me/918438508211?text=Hi%20Wringg%2C%20I%20would%20like%20to%20join%20the%20BTM%20pilot%20and%20book%20a%20pickup.";
+const CUSTOMER_APP_DOWNLOAD_URL = "/download";
 const HOST_CTA_URL =
   "https://wa.me/918438508211?text=Hi%20Wringg%2C%20I%20would%20like%20to%20become%20an%20early%20host%20for%20the%20BTM%20pilot.";
 const SUPPORT_CTA_URL =
@@ -24,12 +16,11 @@ const landingImages = {
   hero: "/2.WEBP.png?v=2",
 } as const;
 
-const customerActionUrl = ENABLE_APP_DOWNLOAD
-  ? CUSTOMER_APP_DOWNLOAD_URL
-  : CUSTOMER_CTA_URL;
-const hostActionUrl = ENABLE_APP_DOWNLOAD ? HOST_APP_DOWNLOAD_URL : HOST_CTA_URL;
+const customerActionUrl = CUSTOMER_APP_DOWNLOAD_URL;
+const hostActionUrl = HOST_CTA_URL;
 
 const navItems = [
+  { label: "Download App", href: "/download" },
   { label: "USP", href: "#usp" },
   { label: "How it Works", href: "#how-it-works" },
   { label: "Become Host", href: "#partners" },
@@ -208,7 +199,7 @@ export default function Home() {
               making clothing care faster, more trusted, and more human.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={customerActionUrl}>Book Pickup</ButtonLink>
+              <ButtonLink href={customerActionUrl}>Download App</ButtonLink>
               <ButtonLink href={hostActionUrl} variant="secondary">
                 Become Host
               </ButtonLink>
@@ -332,6 +323,14 @@ export default function Home() {
             <p className="text-sm font-semibold text-slate-500">
               Wash. Wear. Repeat. Built in Bengaluru.
             </p>
+            <address className="max-w-md text-sm not-italic leading-6 text-slate-600">
+              <span className="font-bold">WRINGG NETWORKS PRIVATE LIMITED</span><br />
+              101, Oxford Towers, 139/88, HAL Old Airport Road,<br />
+              Hulsur Bazaar, Bangalore North, Bengaluru - 560008
+            </address>
+            <a href="mailto:contact@wringg.in" className="text-sm font-bold text-cyan-700 hover:text-sky-600">
+              contact@wringg.in
+            </a>
             <a href={SUPPORT_CTA_URL} className="text-sm font-bold text-cyan-700 hover:text-sky-600">
               WhatsApp support: +91 84385 08211
             </a>
