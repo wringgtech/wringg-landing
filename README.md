@@ -15,6 +15,7 @@ Production-ready standalone landing page for WRINGG, built with Next.js, TypeScr
 
 - `/` - landing page
 - `/privacy` - Privacy Policy
+- `/delete-account` - Account-deletion instructions
 - `/terms` - Terms & Conditions
 - `/refund` - Refund & Cancellation Policy
 - `/shipping` - Shipping & Delivery Policy
@@ -37,30 +38,38 @@ npm run build
 
 This project uses `output: "export"` in `next.config.ts`, so the static production site is generated in the `out` directory.
 
-## Cloudflare Worker Deployment
+## Cloudflare production deployments
 
-This project deploys as a Cloudflare Worker with static assets from the `out` directory.
+The `wringg` Worker serves `wringg.in` and builds from `wringgtech/wringg-landing`. Pushes and merged pull requests to `main` trigger Cloudflare Workers Builds and deploy the resulting static site.
 
-Wrangler is included for CLI deployment.
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Root directory | `/` |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Build watch paths | `*` |
+| Automatic builds | Enabled |
+
+Cloudflare installs dependencies from `package-lock.json` before running the build. Next.js exports the site to `out`, and `wrangler.jsonc` deploys those static assets to the existing `wringg` Worker. Build credentials are managed in Cloudflare.
+
+After a push, open **Workers & Pages → wringg → Deployments → View build history**. Confirm that the build uses the expected `main` commit and that the new deployment is active, then check `https://wringg.in/privacy/` and `https://wringg.in/delete-account/`. A failed build leaves the previous successful deployment serving the website.
+
+## Local Cloudflare preview
+
+Preview the production export locally:
 
 ```bash
-npm run build
-npm run worker:preview
+npm run preview
 ```
 
-Deploy the Worker:
+For an authenticated deployment from a local repository checkout:
 
 ```bash
-npm run worker:deploy
+npm run deploy
 ```
 
-If this is your first Cloudflare CLI deploy, authenticate first:
-
-```bash
-npx wrangler login
-```
-
-The Wrangler config is in `wrangler.jsonc`. Static assets are served from `out` using Workers static assets without an assets binding.
+Both scripts build the static export first. The Wrangler configuration is in `wrangler.jsonc`.
 
 ## Assets
 
