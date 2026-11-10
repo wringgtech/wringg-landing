@@ -30,6 +30,19 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
           <p className="mt-4 text-sm font-bold text-slate-500">
             Last updated: {content.updated}
           </p>
+          {content.links ? (
+            <nav aria-label="Privacy and account help" className="mt-7 flex flex-wrap gap-3">
+              {content.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-2xl bg-[#071f3f] px-5 py-3 text-sm font-bold text-white underline-offset-4 transition hover:bg-[#124575] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#071f3f]"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          ) : null}
         </div>
 
         <div className="mt-8 grid gap-5">
@@ -51,8 +64,15 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
         <div className="mt-8 rounded-[1.5rem] bg-[#071f3f] p-6 text-white">
           <p className="font-black">Need help?</p>
           <p className="mt-2 text-sm leading-7 text-sky-50">
-            WhatsApp +91 84385 08211 or email hello@wringg.in.
+            <a className="underline underline-offset-4" href="https://wa.me/918438508211">WhatsApp +91 84385 08211</a>
+            {" or email "}
+            <a className="underline underline-offset-4" href="mailto:hello@wringg.in">hello@wringg.in</a>.
           </p>
+          <nav aria-label="Legal pages" className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
+            <Link className="underline underline-offset-4" href="/privacy">Privacy policy</Link>
+            <Link className="underline underline-offset-4" href="/delete-account">Delete account</Link>
+            <Link className="underline underline-offset-4" href="/contact">Contact</Link>
+          </nav>
         </div>
       </section>
     </main>
