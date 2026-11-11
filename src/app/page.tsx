@@ -85,7 +85,13 @@ function ButtonLink({
 
   return (
     <Suspense fallback={<a href={href} className={className}>{children}</a>}>
-      <DownloadLink href={href} className={className}>{children}</DownloadLink>
+      <DownloadLink
+        href={href}
+        className={className}
+        loadingLabel={href === CUSTOMER_APP_DOWNLOAD_URL ? "Opening Google Play…" : undefined}
+      >
+        {children}
+      </DownloadLink>
     </Suspense>
   );
 }
