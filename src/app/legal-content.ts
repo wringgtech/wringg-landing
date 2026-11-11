@@ -1,3 +1,5 @@
+import { companyDetails } from "./company-details";
+
 export type LegalPageContent = {
   title: string;
   description: string;
@@ -13,8 +15,12 @@ export const legalPages: Record<string, LegalPageContent> = {
   privacy: {
     "title": "Privacy Policy",
     "description": "How WRINGG uses information in the Wringg Customer App, Wringg Partner app, website and clothing-care services.",
-    "updated": "November 10, 2026",
+    "updated": "November 11, 2026",
     "links": [
+      {
+        "href": "/user-privacy",
+        "label": "Manage privacy choices"
+      },
       {
         "href": "/delete-account",
         "label": "Request account deletion"
@@ -28,6 +34,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         "heading": "Who this notice covers",
         "body": [
+          `WRINGG is operated by ${companyDetails.name}. Official address: ${companyDetails.address}.`,
           "WRINGG coordinates clothing-care services in supported Bengaluru neighbourhoods. This notice covers customers, service partners, website visitors and people who contact our support team. Partner verification and payout information is used for partner operations; it is not a requirement for ordinary customer bookings.",
           "For privacy questions, corrections, complaints or deletion requests, email hello@wringg.in or call or WhatsApp +91 84385 08211. Tell us which app or service your request concerns. We may verify account ownership before changing or disclosing account information."
         ]
@@ -35,16 +42,16 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         "heading": "Account, address and order information",
         "body": [
-          "We use your sign-in phone number, account identifier, name and any email or other profile details you provide to authenticate you and manage your account. Saved pickup and delivery addresses, coordinates, contact details, service selections, garment counts, care instructions and order activity help us check serviceability and arrange pickup, processing and delivery.",
+          "When you sign in or edit your profile, we collect your phone number, account identifier, name and any email or other details you provide. We use your phone number to send a one-time code and use your account details to authenticate you and manage your account. When you book a service, we collect pickup and delivery addresses and their coordinates, contact details, service selections, garment counts, care instructions and order activity to check coverage and arrange pickup, processing and delivery.",
           "Order amounts, cash acknowledgements, receipts, complaints, refunds and settlement records support billing, reconciliation, support and fraud prevention. New cash-at-handover bookings do not require you to give WRINGG a card number. Records of earlier online payments may still be retained.",
-          "We receive messages and information you choose to share through support, ratings, email, phone or WhatsApp. Communication providers also process those interactions under their own policies."
+          "We collect the order reference, message and other details you submit in a support request, and any rating or feedback you provide. If you contact us by email, phone or WhatsApp, we receive the information you choose to share, including any photos you send. We use this information to respond and resolve issues. Your chosen communication service also handles the interaction under its own privacy notice."
         ]
       },
       {
         "heading": "Location and device permissions",
         "body": [
           "With permission, the customer app uses your current location to help identify your address and check serviceability. Partner location supports onboarding, service areas and matching on-duty partners with nearby work. Saved addresses and relevant work locations can remain associated with accounts and orders.",
-          "The current app configuration requests foreground location; it does not enable background-location collection. You can change permission in your device settings. Without location access, use the address options available in your app or ask support for help.",
+          "The apps request foreground location. You can turn off Wringg’s location permission in your device settings at any time and use the address options in the customer app to enter a pickup address. Turning off device location stops that access. Saved addresses and coordinates can still be used for bookings and retained as described below.",
           "Partners use the camera for identity checks and order-proof photos. Verification may also use a selected document image, microphone or liveness capture, depending on the verification flow and platform. These partner permissions do not mean the customer app requires identity documents or camera access."
         ]
       },
@@ -75,15 +82,16 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         "heading": "Who receives information",
         "body": [
-          "Assigned service partners and authorized staff receive information needed for fulfilment, support, verification or finance. We use Supabase for backend hosting, authentication and storage; Google services for mapping or location-related functions; Didit for partner verification; Expo and platform services for app updates or notifications; and Cloudflare for this website. Payment services, where used, include Razorpay.",
-          "Provider infrastructure may process information outside your location. Providers handle information for their respective services and policies. We may also disclose relevant records when required by applicable law or to address fraud, disputes and the safety of our service.",
+          "Assigned service partners and authorized staff receive information relevant to their role in pickup, delivery, support, verification or finance. We use Supabase for hosting, authentication and storage, SMS delivery services to send sign-in codes, Expo and platform services for app updates and notifications, Didit for partner verification, and Cloudflare for this website. Payment services, where used, include Razorpay.",
+          "When you use a map or address lookup, Google Maps Platform processes the information needed to provide that feature, which can include address or location information, network information and app identifiers.",
+          "We require third parties that receive personal data from our apps to provide protection at least equivalent to the safeguards described in this policy and to use the data for the purposes disclosed here. Provider infrastructure may process information outside your location. We may also disclose relevant records when required by applicable law or to address fraud, disputes and safety.",
           "We use access controls and restricted storage to reduce exposure. No online service can guarantee absolute security."
         ]
       },
       {
         "heading": "Account closure and retained records",
         "body": [
-          "You can initiate account deletion in an updated app or request it through support without reinstalling the app. A recorded request is not completed deletion. Active orders, unpaid balances, disputes, refunds or unsettled partner obligations may need resolution before closure.",
+          "To request deletion, open Profile in the Wringg Customer App or Wringg Partner app, choose Delete account and confirm Request Deletion. If you cannot access the app, use the account-deletion link above or contact us. Keep the request reference if shown. Active orders, unpaid balances, disputes, refunds or unsettled partner obligations may delay completion. You can check your request status in the customer app or ask support for an update.",
           "Core account cleanup removes or replaces ordinary profile names and contact details, saved address details and coordinates, mutable payout and onboarding details, notification tokens, unused login-session information and specified optional-analytics links. The login is then closed. A non-login account reference remains so historical records stay consistent.",
           "Order and proof records, payment and cash records, earnings and settlement records, audit and state history, fraud-related records and partner verification evidence are outside automatic account cleanup. These categories currently have no fixed automatic expiry. Some records may be needed for transactions, disputes or recordkeeping; we do not claim that indefinite retention of every item is legally required.",
           "Provider-held data, backups and information already exported to another service are not all erased when a WRINGG login closes. Ask support for a separate review of retained records and provider-held copies. We will explain the scope and any applicable restrictions rather than treating login closure as confirmation that every copy has been erased."
@@ -92,21 +100,59 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         "heading": "Your choices and privacy requests",
         "body": [
-          "You can update details offered in the app, change device permissions, withdraw optional analytics consent where available, and contact us to request access, correction, account deletion or review of retained information. Our Delete Account page explains the available request routes and current processing limits.",
+          "You can update available profile details in the app and manage Wringg’s location and notification permissions in your device settings. If your version offers optional interaction analytics, you can withdraw your analytics consent using the app’s analytics control. To request access, correction, deletion or a review of retained information, contact us at hello@wringg.in. Tell us which Wringg app you use and what you would like to request.",
           "Do not send passwords, login or delivery OTPs, bank credentials or identity-document images by email. If a request needs further verification, support should arrange an appropriate method and request only what is necessary.",
           "This notice changes when our data handling changes. The date above identifies the current version."
         ]
       }
     ]
   },
+  userPrivacy: {
+    title: "Your Privacy Choices",
+    description:
+      "Manage your privacy settings or request access, correction or deletion of information from the Wringg Customer or Partner app.",
+    updated: "November 11, 2026",
+    links: [
+      {
+        href: "mailto:hello@wringg.in?subject=WRINGG%20privacy%20request",
+        label: "Email a privacy request",
+      },
+      { href: "/delete-account", label: "Request account deletion" },
+      { href: "/privacy", label: "Read the privacy policy" },
+    ],
+    sections: [
+      {
+        heading: "Manage app permissions",
+        body: [
+          "Use your device settings to change Wringg’s access to location and notifications. In the Customer app, you can enter a pickup address manually when location access is off.",
+          "If your app version offers optional interaction analytics, you can withdraw your consent through the app’s analytics control.",
+        ],
+      },
+      {
+        heading: "Access or correct your information",
+        body: [
+          "You can edit available profile details in the app. To request a copy, correction or review of retained information, email hello@wringg.in and tell us which Wringg app you use and what you want us to review.",
+          "We may verify account ownership before sharing or changing information. Keep passwords, login or delivery codes, bank credentials and identity-document images out of your email.",
+        ],
+      },
+      {
+        heading: "Delete your account",
+        body: [
+          "Open Profile in the Wringg Customer or Partner app, choose Delete account and confirm Request Deletion. If you cannot access the app, use the Request account deletion link above for instructions on requesting deletion through support.",
+          "The Delete Account page explains how to check request status, what can delay deletion, and what information may be retained.",
+        ],
+      },
+    ],
+  },
   terms: {
     title: "Terms & Conditions",
     description: "Simple usage terms for WRINGG customers and local partners.",
-    updated: "May 24, 2026",
+    updated: "November 11, 2026",
     sections: [
       {
         heading: "Service usage",
         body: [
+          `WRINGG is operated by ${companyDetails.name}. Official address: ${companyDetails.address}.`,
           "WRINGG is operating a hyperlocal clothing-care pilot in selected service zones starting with BTM Layout, Bengaluru.",
           "By booking a service, you agree to provide accurate contact, address, and garment information so pickup, care, and delivery can be coordinated.",
         ],
@@ -182,14 +228,21 @@ export const legalPages: Record<string, LegalPageContent> = {
   contact: {
     title: "Contact WRINGG",
     description: "Reach WRINGG for bookings, partner interest, and support.",
-    updated: "May 24, 2026",
+    updated: "November 11, 2026",
     sections: [
+      {
+        heading: "Company details",
+        body: [
+          companyDetails.name,
+          `Official address: ${companyDetails.address}`,
+        ],
+      },
       {
         heading: "Support",
         body: [
           "WhatsApp or phone: +91 84385 08211",
           "Email: hello@wringg.in",
-          "Location: BTM Layout, Bengaluru",
+          "Pilot service area: BTM Layout, Bengaluru",
         ],
       },
       {

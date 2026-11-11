@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { companyDetails } from "./company-details";
 
 // CTA switch:
 // Keep false during pilot mode so primary actions use WhatsApp onboarding flows.
@@ -332,6 +333,10 @@ export default function Home() {
             <p className="text-sm font-semibold text-slate-500">
               Wash. Wear. Repeat. Built in Bengaluru.
             </p>
+            <address className="max-w-md text-sm not-italic leading-6 text-slate-600">
+              <p className="font-bold">{companyDetails.name}</p>
+              <p className="mt-1">Official address: {companyDetails.address}</p>
+            </address>
             <a href={SUPPORT_CTA_URL} className="text-sm font-bold text-cyan-700 hover:text-sky-600">
               WhatsApp support: +91 84385 08211
             </a>

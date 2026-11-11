@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { companyDetails } from "./company-details";
 import type { LegalPageContent } from "./legal-content";
 
 export function LegalPage({ content }: { content: LegalPageContent }) {
@@ -73,6 +74,10 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
             <Link className="underline underline-offset-4" href="/delete-account">Delete account</Link>
             <Link className="underline underline-offset-4" href="/contact">Contact</Link>
           </nav>
+          <address className="mt-6 border-t border-white/15 pt-5 text-sm not-italic leading-7 text-sky-50">
+            <p className="font-bold">{companyDetails.name}</p>
+            <p className="mt-1">Official address: {companyDetails.address}</p>
+          </address>
         </div>
       </section>
     </main>
