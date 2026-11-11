@@ -12,7 +12,7 @@ This pack gives evidence-supported answers and clearly identifies final-binary a
 | Apple Privacy Choices, customer | `https://wringg.in/delete-account` |
 | Play account/data deletion, both apps | `https://wringg.in/delete-account` |
 | Support/privacy email | `hello@wringg.in` |
-| Phone | `+91 84385 08211` |
+| Phone | `+91 72002 32473` |
 | Without-app request | Email registered phone and Customer/Partner app name; ownership verification follows. No reinstall required |
 | In-app request | Profile → Delete account → confirmation. Customer additionally retrieves/refreshes persisted status |
 

@@ -8,7 +8,7 @@ Production-ready standalone landing page for WRINGG, built with Next.js, TypeScr
 - Tagline: Wash. Wear. Repeat.
 - Domain: wringg.in
 - Location: BTM Layout, Bengaluru
-- WhatsApp: +91 84385 08211
+- WhatsApp: +91 72002 32473
 - Email: hello@wringg.in
 
 ## Routes

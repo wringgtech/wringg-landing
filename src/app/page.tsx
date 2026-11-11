@@ -11,11 +11,11 @@ const CUSTOMER_APP_DOWNLOAD_URL = "#customer-app-link-coming-soon";
 const HOST_APP_DOWNLOAD_URL = "#host-app-link-coming-soon";
 
 const CUSTOMER_CTA_URL =
-  "https://wa.me/918438508211?text=Hi%20Wringg%2C%20I%20would%20like%20to%20join%20the%20BTM%20pilot%20and%20book%20a%20pickup.";
+  "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20would%20like%20to%20join%20the%20BTM%20pilot%20and%20book%20a%20pickup.";
 const HOST_CTA_URL =
-  "https://wa.me/918438508211?text=Hi%20Wringg%2C%20I%20would%20like%20to%20become%20an%20early%20host%20for%20the%20BTM%20pilot.";
+  "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20would%20like%20to%20become%20an%20early%20host%20for%20the%20BTM%20pilot.";
 const SUPPORT_CTA_URL =
-  "https://wa.me/918438508211?text=Hi%20Wringg%2C%20I%20need%20help%20with%20clothing-care%20service.";
+  "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20need%20help%20with%20clothing-care%20service.";
 
 const landingImages = {
   logoWordmark: "/LOGO+TEXT.jpg?v=2",
@@ -338,7 +338,7 @@ export default function Home() {
               <p className="mt-1">Official address: {companyDetails.address}</p>
             </address>
             <a href={SUPPORT_CTA_URL} className="text-sm font-bold text-cyan-700 hover:text-sky-600">
-              WhatsApp support: +91 84385 08211
+              WhatsApp support: +91 72002 32473
             </a>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold text-slate-600">

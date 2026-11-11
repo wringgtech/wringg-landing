@@ -65,7 +65,7 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
         <div className="mt-8 rounded-[1.5rem] bg-[#071f3f] p-6 text-white">
           <p className="font-black">Need help?</p>
           <p className="mt-2 text-sm leading-7 text-sky-50">
-            <a className="underline underline-offset-4" href="https://wa.me/918438508211">WhatsApp +91 84385 08211</a>
+            <a className="underline underline-offset-4" href="https://wa.me/917200232473">WhatsApp +91 72002 32473</a>
             {" or email "}
             <a className="underline underline-offset-4" href="mailto:hello@wringg.in">hello@wringg.in</a>.
           </p>

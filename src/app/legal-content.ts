@@ -36,7 +36,7 @@ export const legalPages: Record<string, LegalPageContent> = {
         "body": [
           `WRINGG is operated by ${companyDetails.name}. Official address: ${companyDetails.address}.`,
           "WRINGG coordinates clothing-care services in supported Bengaluru neighbourhoods. This notice covers customers, service partners, website visitors and people who contact our support team. Partner verification and payout information is used for partner operations; it is not a requirement for ordinary customer bookings.",
-          "For privacy questions, corrections, complaints or deletion requests, email hello@wringg.in or call or WhatsApp +91 84385 08211. Tell us which app or service your request concerns. We may verify account ownership before changing or disclosing account information."
+          "For privacy questions, corrections, complaints or deletion requests, email hello@wringg.in or call or WhatsApp +91 72002 32473. Tell us which app or service your request concerns. We may verify account ownership before changing or disclosing account information."
         ]
       },
       {
@@ -240,7 +240,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         heading: "Support",
         body: [
-          "WhatsApp or phone: +91 84385 08211",
+          "WhatsApp or phone: +91 72002 32473",
           "Email: hello@wringg.in",
           "Pilot service area: BTM Layout, Bengaluru",
         ],
@@ -279,7 +279,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         "heading": "Request without the app",
         "body": [
-          "Email hello@wringg.in with the subject Account deletion request. State whether you use the Customer or Partner app and include the phone number registered to your account so we can arrange ownership verification. You do not need to reinstall the app. You can also call or WhatsApp +91 84385 08211 for help.",
+          "Email hello@wringg.in with the subject Account deletion request. State whether you use the Customer or Partner app and include the phone number registered to your account so we can arrange ownership verification. You do not need to reinstall the app. You can also call or WhatsApp +91 72002 32473 for help.",
           "Do not send passwords, login or delivery OTPs, bank credentials or identity-document images by email. Support may need to verify that you own the account before processing the request."
         ]
       },
@@ -309,7 +309,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         "heading": "Questions or a delayed request",
         "body": [
-          "Contact hello@wringg.in or +91 84385 08211 for verification, a status update, correction, review of retained records or help with provider-held information. Include your request reference if available, but do not send credentials.",
+          "Contact hello@wringg.in or +91 72002 32473 for verification, a status update, correction, review of retained records or help with provider-held information. Include your request reference if available, but do not send credentials.",
           "The Privacy Policy describes the information used for customer service, partner verification, order photos, notifications, referrals and optional analytics."
         ]
       }
