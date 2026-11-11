@@ -1,19 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { companyDetails } from "./company-details";
+import { DownloadLink } from "./download-link";
 
-// CTA switch:
-// Keep false during pilot mode so primary actions use WhatsApp onboarding flows.
-// Set true after app links/APKs are ready, then replace the placeholder URLs below.
-const ENABLE_APP_DOWNLOAD = false;
-const CUSTOMER_APP_DOWNLOAD_URL = "#customer-app-link-coming-soon";
-const HOST_APP_DOWNLOAD_URL = "#host-app-link-coming-soon";
+const CUSTOMER_APP_DOWNLOAD_URL = "https://go.wringg.in/r/7f48272933034476b52ba92c90f53907";
+const PARTNER_APP_DOWNLOAD_URL = "https://play.google.com/store/apps/details?id=in.wringg.partner";
 
-const CUSTOMER_CTA_URL =
-  "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20would%20like%20to%20join%20the%20BTM%20pilot%20and%20book%20a%20pickup.";
-const HOST_CTA_URL =
-  "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20would%20like%20to%20become%20an%20early%20host%20for%20the%20BTM%20pilot.";
 const SUPPORT_CTA_URL =
   "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20need%20help%20with%20clothing-care%20service.";
 
@@ -25,17 +18,15 @@ const landingImages = {
   hero: "/2.WEBP.png?v=2",
 } as const;
 
-const customerActionUrl = ENABLE_APP_DOWNLOAD
-  ? CUSTOMER_APP_DOWNLOAD_URL
-  : CUSTOMER_CTA_URL;
-const hostActionUrl = ENABLE_APP_DOWNLOAD ? HOST_APP_DOWNLOAD_URL : HOST_CTA_URL;
-
 const navItems = [
   { label: "USP", href: "#usp" },
   { label: "How it Works", href: "#how-it-works" },
-  { label: "Become Host", href: "#partners" },
+  { label: "Become Partner", href: PARTNER_APP_DOWNLOAD_URL },
   { label: "Pilot", href: "#pilot" },
 ];
+
+const navigationLinkClassName =
+  "rounded-full px-1 py-2 transition hover:text-[#2098d6]";
 
 const uspCards = [
   {
@@ -90,13 +81,12 @@ function ButtonLink({
     dark: "bg-[#0f3148] text-white shadow-slate-900/15 hover:bg-[#123c58]",
   };
 
+  const className = `inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold shadow-lg transition duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-cyan-100 ${styles[variant]}`;
+
   return (
-    <a
-      href={href}
-      className={`inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold shadow-lg transition duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-cyan-100 ${styles[variant]}`}
-    >
-      {children}
-    </a>
+    <Suspense fallback={<a href={href} className={className}>{children}</a>}>
+      <DownloadLink href={href} className={className}>{children}</DownloadLink>
+    </Suspense>
   );
 }
 
@@ -181,17 +171,18 @@ export default function Home() {
 
           <nav className="hidden items-center gap-7 text-sm font-semibold text-slate-600 lg:flex">
             {navItems.map((item) => (
-              <a
+              <Suspense
                 key={item.href}
-                href={item.href}
-                className="rounded-full px-1 py-2 transition hover:text-[#2098d6]"
+                fallback={<a href={item.href} className={navigationLinkClassName}>{item.label}</a>}
               >
-                {item.label}
-              </a>
+                <DownloadLink href={item.href} className={navigationLinkClassName}>
+                  {item.label}
+                </DownloadLink>
+              </Suspense>
             ))}
           </nav>
 
-          <ButtonLink href={hostActionUrl}>Join Pilot</ButtonLink>
+          <ButtonLink href={CUSTOMER_APP_DOWNLOAD_URL}>Join Pilot</ButtonLink>
         </div>
       </header>
 
@@ -209,9 +200,9 @@ export default function Home() {
               making clothing care faster, more trusted, and more human.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={customerActionUrl}>Book Pickup</ButtonLink>
-              <ButtonLink href={hostActionUrl} variant="secondary">
-                Become Host
+              <ButtonLink href={CUSTOMER_APP_DOWNLOAD_URL}>Book Pickup</ButtonLink>
+              <ButtonLink href={PARTNER_APP_DOWNLOAD_URL} variant="secondary">
+                Become Partner
               </ButtonLink>
             </div>
           </div>
@@ -267,7 +258,7 @@ export default function Home() {
             your free time into chore time.
           </p>
           <div className="mt-7">
-            <ButtonLink href={customerActionUrl} variant="secondary">
+            <ButtonLink href={CUSTOMER_APP_DOWNLOAD_URL} variant="secondary">
               Book Pickup
             </ButtonLink>
           </div>
@@ -285,7 +276,7 @@ export default function Home() {
               />
             </div>
             <div className="p-7 sm:p-9">
-              <SectionLabel>For hosts</SectionLabel>
+              <SectionLabel>For partners</SectionLabel>
               <h2 className="mt-3 text-3xl font-black sm:text-4xl">
                 Make money with your washing machine.
               </h2>
@@ -294,7 +285,7 @@ export default function Home() {
                 care into neighbourhood income.
               </p>
               <div className="mt-7">
-                <ButtonLink href={hostActionUrl}>Become a Host</ButtonLink>
+                <ButtonLink href={PARTNER_APP_DOWNLOAD_URL}>Become Partner</ButtonLink>
               </div>
             </div>
           </div>
@@ -312,9 +303,9 @@ export default function Home() {
             while the network is still being shaped.
           </p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink href={customerActionUrl}>Book Pickup</ButtonLink>
-            <ButtonLink href={hostActionUrl} variant="secondary">
-              Become Host
+            <ButtonLink href={CUSTOMER_APP_DOWNLOAD_URL}>Book Pickup</ButtonLink>
+            <ButtonLink href={PARTNER_APP_DOWNLOAD_URL} variant="secondary">
+              Become Partner
             </ButtonLink>
           </div>
         </div>

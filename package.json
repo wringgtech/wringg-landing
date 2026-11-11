@@ -10,7 +10,8 @@
     "pages:deploy": "wrangler deploy",
     "upload": "npm run build && wrangler version upload",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:links": "node --experimental-strip-types --test tests/download-links.test.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

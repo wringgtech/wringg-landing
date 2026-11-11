@@ -81,4 +81,10 @@ The site uses the current WRINGG brand assets from `public`:
 
 ## Pilot CTA Links
 
-The landing page is currently in pilot mode. Primary CTAs use WhatsApp prefilled flows for early customer pickup requests and host onboarding, with button text framed as product actions instead of WhatsApp actions. These can later be swapped for app deep links or form URLs in `src/app/page.tsx`.
+- **Join Pilot / Book Pickup:** the active [Website Pilot customer download link](https://go.wringg.in/r/7f48272933034476b52ba92c90f53907). Washmate's existing download service opens Google Play on Android and shows its download page with a QR code on desktop.
+- **Become Partner:** the [Wringg Partner Google Play listing](https://play.google.com/store/apps/details?id=in.wringg.partner), including the navigation link.
+- **WhatsApp support:** remains available at +91 72002 32473.
+
+Download links preserve every incoming `utm_*` field, including custom fields and encoded values. Direct Google Play links also carry these fields in the install-referrer parameter. Other incoming query parameters are not forwarded. The existing Washmate service records the Website Pilot campaign; storing individual incoming UTM values there is a separate backend change.
+
+Run `npm run test:links` to check UTM forwarding and install-referrer encoding.
