@@ -88,3 +88,27 @@ The site uses the current WRINGG brand assets from `public`:
 Download links preserve every incoming `utm_*` field, including custom fields and encoded values. Direct Google Play links also carry these fields in the install-referrer parameter. Other incoming query parameters are not forwarded. The existing Washmate service records the Website Pilot campaign; storing individual incoming UTM values there is a separate backend change.
 
 Run `npm run test:links` to check UTM forwarding and install-referrer encoding.
+
+## Online booking (customer web)
+
+The site includes a browser version of the customer app's booking flow:
+
+- `/login` - phone OTP sign-in, then name for first-time customers
+- `/book` - pickup address (browser location + typed address), service, clothes count, pickup slot, first-order coupon, cash-on-delivery order
+- `/order?id=…` - order status
+- `/orders` - active orders
+
+The pages are client components that call the same Washmate Supabase edge functions as the mobile app (`src/lib/washmate`). There is no server of our own: the static export calls the backend from the browser, and the signed-in session (Supabase access and refresh tokens) is kept in `localStorage`. Payment is cash on delivery only.
+
+Configure the backend at build time. Both values are public (the same anon key ships in the mobile app):
+
+```bash
+NEXT_PUBLIC_WASHMATE_SUPABASE_URL=https://<project-ref>.supabase.co
+NEXT_PUBLIC_WASHMATE_SUPABASE_ANON_KEY=<anon key>
+```
+
+Put them in `.env.local` for local work, and in the Cloudflare Workers Builds environment for production. When they are missing, the booking pages show a "Book in the WRINGG app" card instead of the form.
+
+Requests identify as `x-app-id: in.wringg.customer` with no `x-app-version-code`. The backend's app-version gate treats this as an unversioned client; if the active `app_version_policies` row rejects unversioned clients, the pages show the same app fallback.
+
+Run `npm test` for all unit tests.
