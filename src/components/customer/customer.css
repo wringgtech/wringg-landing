@@ -1,0 +1,331 @@
+/* WRINGG customer design tokens + signature pieces (hang tag, step track,
+   skeletons). Scoped under the `cw-*` prefix so nothing leaks into the
+   landing page.
+
+   Direction: "care label". A cool rinse-blue page, navy ink, WRINGG blue for
+   every action, and one marigold highlight reserved for "next available" and
+   offers. Headings, figures and body all use Plus
+   Jakarta Sans so the pages still read as the same brand as the landing. */
+
+/* Native tap flash off: the design system paints its own pressed states. */
+main {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  /* Surfaces (60%) */
+  --cw-page: #eef4f8;
+  --cw-surface: #ffffff;
+  --cw-subtle: #f3f7fa;
+  --cw-accent-soft: #e8f3fb;
+
+  /* Ink (30%) */
+  --cw-ink: #0b2638;
+  --cw-text: #0f3148;
+  --cw-body: #445569;
+  --cw-muted: #55667a;
+  --cw-hairline: rgba(15, 49, 72, 0.1);
+  --cw-hairline-strong: rgba(15, 49, 72, 0.2);
+
+  /* Accent (10%)
+     --cw-accent: non-text uses (selected borders, focus, icons, rail).
+     --cw-accent-strong: accent TEXT and primary fills (4.89:1 on white). */
+  --cw-accent: #2098d6;
+  --cw-accent-strong: #1477b0;
+  --cw-accent-deep: #0f6fa3;
+  --cw-link: #0e6f9f;
+
+  /* Marigold: the single warm highlight. Never body text on white. */
+  --cw-marigold: #e9a23b;
+  --cw-marigold-soft: #fdf3e1;
+  --cw-marigold-ink: #6e4304;
+
+  /* Status */
+  --cw-success: #047857;
+  --cw-success-soft: #ecfdf5;
+  --cw-warning: #92400e;
+  --cw-warning-soft: #fffbeb;
+  --cw-danger: #b91c1c;
+  --cw-danger-soft: #fef2f2;
+
+  /* Elevation: border first, then one soft layered shadow. */
+  --cw-shadow-raised:
+    0 1px 2px rgba(15, 49, 72, 0.06), 0 8px 24px -14px rgba(15, 49, 72, 0.18);
+  --cw-shadow-tag:
+    0 1px 2px rgba(15, 49, 72, 0.08), 0 24px 48px -24px rgba(15, 49, 72, 0.36);
+
+  /* Type */
+  /* Same face as the marketing page (Plus Jakarta Sans). */
+  --cw-font-display: var(--font-jakarta), var(--font-sans), system-ui, sans-serif;
+
+  /* Motion */
+  --cw-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --cw-dur-fast: 150ms;
+  --cw-dur-med: 220ms;
+}
+
+/* Display type: headings, step titles, prices. Slightly condensed width and
+   tight tracking so large figures stay compact on a 375px screen. */
+/* In the components layer so Tailwind tracking-* utilities still override. */
+@layer components {
+  .cw-display {
+    font-family: var(--cw-font-display);
+  }
+}
+
+/* --- Skeleton ------------------------------------------------------------- */
+
+.cw-skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e3ebf1;
+}
+
+.cw-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  animation: cw-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes cw-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Native <dialog> backdrop (sign-out confirm, mobile account menu). */
+.cw-dialog::backdrop {
+  background: rgba(11, 38, 56, 0.45);
+}
+
+.cw-dialog[open] {
+  animation: cw-pop var(--cw-dur-med) var(--cw-ease);
+}
+
+@keyframes cw-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-skeleton::after {
+    animation: none;
+  }
+  .cw-dialog[open] {
+    animation: none;
+  }
+}
+
+/* --- Hang tag (signature) -------------------------------------------------
+   A garment hang tag: navy header band with a brass eyelet punched through
+   it, white body, perforated tear line with notches cut into both edges. */
+
+.cw-tag {
+  --cw-tag-pad: 22px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px 18px 20px 20px;
+  background: var(--cw-surface);
+  box-shadow: var(--cw-shadow-tag), 0 0 0 1px var(--cw-hairline);
+}
+
+@media (min-width: 640px) {
+  .cw-tag {
+    --cw-tag-pad: 26px;
+  }
+}
+
+.cw-tag-band {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  padding: 14px var(--cw-tag-pad) 14px calc(var(--cw-tag-pad) + 30px);
+  background: var(--cw-ink);
+  color: #fff;
+}
+
+/* Eyelet: a page-coloured hole with a brass ring, punched near the band's
+   left edge — where the string goes through on a real tag. */
+.cw-tag-eyelet {
+  position: absolute;
+  left: var(--cw-tag-pad);
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  border-radius: 9999px;
+  background: var(--cw-page);
+  box-shadow:
+    0 0 0 3px #c99a4a,
+    0 0 0 4px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(15, 49, 72, 0.35);
+}
+
+.cw-tag-title {
+  font-family: var(--cw-font-display);
+  font-variation-settings: "wdth" 92;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.cw-tag-body {
+  padding: 18px var(--cw-tag-pad) var(--cw-tag-pad);
+}
+
+/* Perforated tear line: dashed hairline with half-circle notches. The notch
+   circles straddle the card edge and overflow clips their outer half. */
+.cw-tag-perforation {
+  position: relative;
+  height: 0;
+  border-top: 2px dashed var(--cw-hairline-strong);
+  margin: 18px calc(-1 * var(--cw-tag-pad));
+}
+
+.cw-tag-perforation::before,
+.cw-tag-perforation::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--cw-page);
+  box-shadow: inset 0 0 0 1px var(--cw-hairline);
+}
+
+.cw-tag-perforation::before {
+  left: -7px;
+}
+
+.cw-tag-perforation::after {
+  right: -7px;
+}
+
+/* --- Step track (booking) -------------------------------------------------
+   Numbered steps joined by a vertical rail. Each step's node turns into a
+   filled check once that step has a valid choice. */
+
+.cw-steps {
+  position: relative;
+  display: grid;
+  gap: 0;
+}
+
+.cw-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  column-gap: 14px;
+  padding-bottom: 36px;
+}
+
+@media (min-width: 640px) {
+  .cw-step {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 20px;
+    padding-bottom: 44px;
+  }
+}
+
+.cw-step:last-child {
+  padding-bottom: 0;
+}
+
+/* Rail: runs from under this node to the next one. */
+.cw-step::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 36px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--cw-hairline-strong);
+  transition: background-color var(--cw-dur-med) var(--cw-ease);
+}
+
+@media (min-width: 640px) {
+  .cw-step::before {
+    left: 17px;
+    top: 40px;
+  }
+}
+
+.cw-step:last-child::before {
+  display: none;
+}
+
+.cw-step[data-done="true"]::before {
+  background: var(--cw-accent);
+}
+
+.cw-step-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: var(--cw-surface);
+  box-shadow: inset 0 0 0 2px var(--cw-hairline-strong);
+  color: var(--cw-ink);
+  font-family: var(--cw-font-display);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition:
+    background-color var(--cw-dur-med) var(--cw-ease),
+    color var(--cw-dur-med) var(--cw-ease),
+    box-shadow var(--cw-dur-med) var(--cw-ease);
+}
+
+@media (min-width: 640px) {
+  .cw-step-node {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+.cw-step[data-done="true"] .cw-step-node {
+  background: var(--cw-accent-strong);
+  box-shadow: none;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-step::before,
+  .cw-step-node {
+    transition: none;
+  }
+}
+
+/* Service plate focus. The radio is sr-only, so focus has to be drawn on the
+   label. Explicit CSS rather than a has() utility: outline-color must be the
+   accent even when the plate is the ink "selected" surface (currentColor white). */
+.cw-plate:has(input:focus-visible) {
+  outline: 2px solid var(--cw-accent);
+  outline-offset: 2px;
+}
+
+/* Text style parity with the marketing page: the same face, weight and tracking
+   the home page sets on its headings (font-black). Declared outside the layers
+   so a component's font-bold utility cannot override the weight. Letter
+   spacing is left to tracking-* utilities (the delivery code relies on it). */
+.cw-display {
+  font-family: var(--font-jakarta), var(--font-sans), system-ui, sans-serif;
+  font-weight: 900;
+}

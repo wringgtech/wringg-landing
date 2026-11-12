@@ -96,6 +96,17 @@ function ButtonLink({
   );
 }
 
+function WebBookingLink() {
+  return (
+    <p className="mt-4 text-sm font-semibold text-slate-600">
+      Prefer the web?{" "}
+      <Link href="/book" className="font-bold text-cyan-700 underline-offset-4 hover:text-sky-600 hover:underline">
+        Book a pickup online
+      </Link>
+    </p>
+  );
+}
+
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <p className="text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">
@@ -176,6 +187,7 @@ export default function Home() {
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm font-semibold text-slate-600 lg:flex">
+            <Link href="/book" className={navigationLinkClassName}>Book Online</Link>
             {navItems.map((item) => (
               <Suspense
                 key={item.href}
@@ -211,6 +223,7 @@ export default function Home() {
                 Become Partner
               </ButtonLink>
             </div>
+            <WebBookingLink />
           </div>
 
           <HeroVisual />
@@ -314,6 +327,7 @@ export default function Home() {
               Become Partner
             </ButtonLink>
           </div>
+          <WebBookingLink />
         </div>
       </section>
 
@@ -344,6 +358,7 @@ export default function Home() {
             <Link href="/refund" className="hover:text-sky-600">Refund Policy</Link>
             <Link href="/shipping" className="hover:text-sky-600">Shipping</Link>
             <Link href="/contact" className="hover:text-sky-600">Contact</Link>
+            <Link href="/orders" className="hover:text-sky-600">My Orders</Link>
             <Link href="/delete-account" className="hover:text-sky-600">Delete Account</Link>
           </div>
         </div>
