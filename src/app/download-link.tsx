@@ -9,11 +9,15 @@ export function DownloadLink({
   className,
   children,
   loadingLabel,
+  target,
+  rel,
 }: {
   href: string;
   className: string;
   children: ReactNode;
   loadingLabel?: string;
+  target?: string;
+  rel?: string;
 }) {
   const searchParams = useSearchParams();
   const [opening, setOpening] = useState(false);
@@ -56,6 +60,8 @@ export function DownloadLink({
   return (
     <a
       href={withUtmParameters(href, searchParams.toString())}
+      target={target}
+      rel={rel}
       className={`${className}${loadingLabel ? " relative" : ""}${opening ? " cursor-wait" : ""}`}
       onClick={handleClick}
       aria-busy={opening || undefined}
