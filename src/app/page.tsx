@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense, type ReactNode } from "react";
+import { buttonClassName } from "./button-styles";
 import { companyDetails } from "./company-details";
+import { DownloadAppDialog } from "./download-app-dialog";
 import { DownloadLink } from "./download-link";
 
 const CUSTOMER_APP_DOWNLOAD_URL = "https://go.wringg.in/r/7f48272933034476b52ba92c90f53907";
 const PARTNER_APP_DOWNLOAD_URL = "https://play.google.com/store/apps/details?id=in.wringg.partner";
+const IOS_BETA_URL = "https://testflight.apple.com/join/Pgw4YY66";
 
 const SUPPORT_CTA_URL =
   "https://wa.me/917200232473?text=Hi%20Wringg%2C%20I%20need%20help%20with%20clothing-care%20service.";
@@ -73,15 +76,7 @@ function ButtonLink({
   children: ReactNode;
   variant?: "primary" | "secondary" | "dark";
 }) {
-  const styles = {
-    primary:
-      "bg-[#2098d6] text-white shadow-sky-500/20 hover:bg-[#1689c8] hover:shadow-sky-500/30",
-    secondary:
-      "border border-sky-200 bg-white text-[#0f3e5c] shadow-sky-200/40 hover:border-sky-300 hover:bg-sky-50",
-    dark: "bg-[#0f3148] text-white shadow-slate-900/15 hover:bg-[#123c58]",
-  };
-
-  const className = `inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold shadow-lg transition duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-cyan-100 ${styles[variant]}`;
+  const className = buttonClassName(variant);
 
   return (
     <Suspense fallback={<a href={href} className={className}>{children}</a>}>
@@ -205,8 +200,13 @@ export default function Home() {
               WRINGG connects busy customers with trained local hosts nearby,
               making clothing care faster, more trusted, and more human.
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href={CUSTOMER_APP_DOWNLOAD_URL}>Book Pickup</ButtonLink>
+              <DownloadAppDialog
+                iosUrl={IOS_BETA_URL}
+                androidUrl={CUSTOMER_APP_DOWNLOAD_URL}
+                triggerClassName={buttonClassName("dark")}
+              />
               <ButtonLink href={PARTNER_APP_DOWNLOAD_URL} variant="secondary">
                 Become Partner
               </ButtonLink>

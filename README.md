@@ -77,6 +77,7 @@ The site uses the current WRINGG brand assets from `public`:
 
 - Navbar: `public/LOGO+TEXT.jpg`
 - Footer and metadata icon: `public/LOGO.jpg`
+- App download QR codes: `public/apps/ios-beta-qr.png` (TestFlight invite `https://testflight.apple.com/join/Pgw4YY66`) and `public/apps/android-app-qr.png` (customer download link `https://go.wringg.in/r/7f48272933034476b52ba92c90f53907`). Regenerate with `qrencode -l M -s 16 -m 4 -t PNG -o <output> '<link>'` after changing either link.
 - Generated page visuals: `public/1 (2).png`, `public/1 (3).png`, `public/1 (4).png`, `public/1 (5).png`, `public/1.WEBP.png`, `public/2.WEBP.png`
 
 ## Pilot CTA Links
