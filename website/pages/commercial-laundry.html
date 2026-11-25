@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="plus_jakarta_sans_76f6c662-module__cgTQqG__variable">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commercial laundry partners | WRINGG</title>
+<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/wringg-base.css">
+<style>
+*{box-sizing:border-box}body{margin:0;color:#102824;background:#f3f2ed;font:16px/1.55 var(--font-plus-jakarta-sans,system-ui),sans-serif}.shell{width:min(1120px,calc(100% - 40px));margin:auto}header{border-bottom:1px solid #aab6a8}nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-weight:750}nav a{color:inherit}.brand{font-size:30px;font-weight:900;letter-spacing:-.08em;text-decoration:none}.brand span{color:#0051c2}.layout{padding:clamp(38px,7vw,100px) 0;display:grid;grid-template-columns:1fr minmax(340px,.95fr);gap:clamp(30px,7vw,100px);align-items:start}.eyebrow{color:#0051c2;font-size:.85rem;font-weight:850;text-transform:uppercase;letter-spacing:.13em}h1{font-size:clamp(2.65rem,5.6vw,5.5rem);font-weight:900;line-height:1.02;letter-spacing:-.065em;margin:15px 0 22px}h2{font-size:1.65rem;font-weight:850;letter-spacing:-.035em;margin:0}.intro{max-width:39ch;font-size:1.15rem}.options{padding:22px 26px;background:#e7ecdf;border-radius:12px;margin-top:32px}.options p{margin:8px 0 0}.form{background:white;border:1px solid #cbd6c9;border-radius:16px;padding:clamp(22px,4vw,36px)}.fields{display:grid;gap:14px;margin:22px 0}label{display:grid;gap:4px;font-weight:700}input,textarea{font:inherit;width:100%;border:1px solid #889b94;border-radius:7px;padding:10px 12px;background:#fafbf8;color:inherit}textarea{resize:vertical;min-height:88px}.hint{font-size:.92rem;color:#3c5851;margin:8px 0}.hint a,footer a{color:#0051c2;text-decoration:underline}button{min-height:48px;padding:12px 20px;background:#102824;color:#fff;font:inherit;font-weight:800;border:0;border-radius:7px;cursor:pointer}button:hover{background:#0051c2}a:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid #0051c2;outline-offset:3px}.feedback{margin:8px 0 0;font-size:.92rem;min-height:23px}footer{border-top:1px solid #aab6a8;padding:18px 0;font-size:.92rem}@media(max-width:760px){.layout{grid-template-columns:1fr}.form{min-width:0}}
+</style>
+<script type="module" src="/marketing-downloads.js"></script>
+<link rel="stylesheet" href="/marketing-downloads.css">
+<link rel="stylesheet" href="/wringg-logo.css?v=13">
+<link rel="canonical" href="https://wringg.in/commercial-laundry/"></head>
+<body>
+<header><nav class="shell" aria-label="Main navigation"><a class="brand" href="/" aria-label="WRINGG home"><img src="/assets/wringg-logo-original-v13.svg" alt="WRINGG" width="164" height="43"></a><a href="/#network">Back to WRINGG</a></nav></header>
+<main class="layout shell">
+<section aria-labelledby="title">
+<div class="eyebrow">Commercial laundry partners</div>
+<h1 id="title">Run a laundry?<br>Let’s work together.</h1>
+<p class="intro">If you operate a professional laundry facility, tell us where you work, what services you offer and what volume you can take on.</p>
+<div class="options"><strong>What happens next</strong><p>The WRINGG team reviews your location, services and capacity to see whether there’s a fit for the local network.</p></div>
+</section>
+<form class="form" id="enquiry" aria-describedby="form-note">
+<h2>Tell us about your laundry</h2>
+<p id="form-note" class="hint">This form opens an email draft addressed to WRINGG. Review it and press Send in your email app. Nothing is sent from the website.</p>
+<div class="fields">
+<label>Business name<input name="business" autocomplete="organization" maxlength="100" required></label>
+<label>Contact name<input name="contact" autocomplete="name" maxlength="100" required></label>
+<label>Work email<input name="email" type="email" autocomplete="email" maxlength="150" required></label>
+<label>City and locality<input name="location" maxlength="100" placeholder="e.g. BTM Layout, Bengaluru" required></label>
+<label>Services and approximate capacity <span class="hint">(optional)</span><textarea name="capacity" maxlength="500" placeholder="e.g. Wash and fold, steam ironing, about 100 kg/day"></textarea></label>
+</div>
+<button type="submit" disabled>Open email draft</button>
+<p class="feedback" id="feedback" role="status"></p>
+<p class="hint">No email app? Send your details to <a href="mailto:hello@wringg.in?subject=Commercial%20laundry%20partnership%20enquiry">hello@wringg.in</a>.</p>
+<noscript><p class="hint">The draft button needs JavaScript. Use the email link above instead.</p></noscript>
+</form>
+</main>
+<footer><div class="shell">Wringg Networks Private Limited · <a href="/privacy">Privacy policy</a> · <a href="/contact">Contact</a></div></footer>
+<script>
+const form = document.querySelector('#enquiry');
+const button = form.querySelector('button');
+button.disabled = true;
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const fields = new FormData(form);
+  const labels = {business:'Business name',contact:'Contact name',email:'Work email',location:'City and locality',capacity:'Services and approximate capacity'};
+  const rows = Object.entries(labels).flatMap(([name,label]) => {
+    const value = String(fields.get(name) ?? '').trim();
+    return value ? [label + ': ' + value] : [];
+  });
+  const subject = encodeURIComponent('Commercial laundry partnership enquiry');
+  const body = encodeURIComponent(['Hello WRINGG,','',...rows,'','I’m interested in discussing a commercial laundry partnership.'].join('\r\n'));
+  document.querySelector('#feedback').textContent = 'Please review and send the draft in your email app.';
+  window.location.href = 'mailto:hello@wringg.in?subject=' + subject + '&body=' + body;
+});
+button.disabled = false;
+</script>
+</body>
+</html>

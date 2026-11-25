@@ -1,0 +1,18 @@
+/* Bounded hero polish: a complete garment, a modest pace lift and a mode readout. */
+.ticker>div{animation-duration:32s}
+#washer-load .sock-complete{position:absolute;left:25%;top:53%;width:30%;height:37%;overflow:visible;transform:rotate(-25deg);filter:drop-shadow(3px 5px 3px #041c2f55);z-index:1}
+@media(prefers-reduced-motion:reduce){.ticker>div{animation:none}}
+
+/* Keep the supporting phrases equal and let LAUNDRY lead the hierarchy. */
+.hero-copy{--hero-support-size:clamp(30px,3.65vw,58px);--hero-laundry-size:clamp(58px,8.2vw,126px)}
+.hero .hero-lead,.hero-copy h1 .hero-hold{font-size:var(--hero-support-size);line-height:1.06;letter-spacing:-.065em;font-weight:800}
+.hero .hero-lead{margin:0 0 12px;text-wrap:nowrap}
+.hero-copy h1{font-size:var(--hero-laundry-size);line-height:.98;letter-spacing:-.075em}
+.hero-copy h1 .hero-laundry{display:block;color:var(--cream);font:inherit;font-weight:900}
+.hero-copy h1 .hero-hold{display:block;margin:12px 0 7px;color:var(--mint)}
+.hero .hero-copy h1 span.hero-back{display:block;font-size:.82em;color:var(--cream)}
+@media(max-width:800px){.hero-copy{--hero-support-size:clamp(28px,7.6vw,48px);--hero-laundry-size:clamp(52px,12vw,94px)}}
+
+/* The phone sparkle lives above the cabinet, clear of its wordmark and controls. */
+@media(max-width:800px){.hero .hero-art{margin-top:52px}.hero .hero-art .spark-one{left:7%;top:-34px;font-size:54px;pointer-events:none}.hero .hero-art .spark-two{font-size:42px;right:5%;bottom:95px;pointer-events:none}}
+@media(max-width:480px){.hero .hero-art .spark-one{left:48px;top:-34px}}

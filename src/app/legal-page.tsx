@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Marketing routes return standalone HTML and require full-document navigation. */
 import { companyDetails } from "./company-details";
 import type { LegalPageContent } from "./legal-content";
 
@@ -7,15 +7,15 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
     <main className="min-h-screen bg-[#f8fcff] text-[#071f3f]">
       <header className="border-b border-sky-100 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
-          <Link href="/" className="text-xl font-black">
+          <a href="/" className="text-xl font-black">
             Wringg
-          </Link>
-          <Link
+          </a>
+          <a
             href="/"
             className="rounded-full border border-sky-200 bg-white px-5 py-2 text-sm font-bold text-[#071f3f] transition hover:bg-sky-50"
           >
             Back home
-          </Link>
+          </a>
         </div>
       </header>
 
@@ -70,9 +70,9 @@ export function LegalPage({ content }: { content: LegalPageContent }) {
             <a className="underline underline-offset-4" href="mailto:hello@wringg.in">hello@wringg.in</a>.
           </p>
           <nav aria-label="Legal pages" className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
-            <Link className="underline underline-offset-4" href="/privacy">Privacy policy</Link>
-            <Link className="underline underline-offset-4" href="/delete-account">Delete account</Link>
-            <Link className="underline underline-offset-4" href="/contact">Contact</Link>
+            <a className="underline underline-offset-4" href="/privacy">Privacy policy</a>
+            <a className="underline underline-offset-4" href="/delete-account">Delete account</a>
+            <a className="underline underline-offset-4" href="/contact">Contact</a>
           </nav>
           <address className="mt-6 border-t border-white/15 pt-5 text-sm not-italic leading-7 text-sky-50">
             <p className="font-bold">{companyDetails.name}</p>

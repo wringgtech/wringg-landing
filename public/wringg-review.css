@@ -1,0 +1,72 @@
+[hidden]{display:none!important}
+.hero .hero-lead{font-size:clamp(2rem,5.8vw,5.6rem);line-height:.97;font-weight:850;letter-spacing:-.07em;color:#84F4B7;margin:0 0 .13em;text-wrap:balance}
+.app-buttons,.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.button.hero-ios{color:#fff;background:transparent;border:1px solid #fff}
+.button.secondary-app{background:transparent;color:#102826;border:1px solid currentColor}
+.role-image img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.role-image.customer-vector{aspect-ratio:660/400;background:#0051c2}
+.role-image.customer-vector img{object-fit:contain}
+.customer-vector .image-caption{display:none}
+.role-tabs button{font-size:clamp(.875rem,1.4vw,1.0625rem);text-align:left}
+.route-lede{max-width:44rem;font-size:1.15rem;line-height:1.65;margin:1.35rem 0 2rem}
+.route-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;padding:0;gap:1rem;margin:2.2rem 0 1.2rem}
+.route-flow li{background:#e9eee5;border:1px solid #c8d4c8;border-radius:1rem;padding:1.25rem;position:relative}
+.route-flow li:nth-child(3){background:#d8fae7;border-color:#87cba7}
+.route-icon{background:#0051c2;color:white;width:3.5rem;height:3.5rem;display:grid;place-items:center;border-radius:.9rem;margin-bottom:1rem}
+.route-icon svg{width:2.15rem;height:2.15rem}
+.route-flow h3,.host-checklist h3{font-size:1.25rem;line-height:1.25;margin:0 0 .5rem}
+.route-flow p,.trust-strip p{font-size:1rem;line-height:1.55;margin:0}
+.trust-strip{display:flex;align-items:center;gap:1rem;background:#102826;color:#fff;border-radius:.9rem;padding:1.1rem 1.3rem}
+.trust-strip>span{color:#84f4b7;font-size:2rem}
+.trust-strip a,.host-checklist a,.final-cta .tiny a,.faq-list p a{text-decoration:underline;text-underline-offset:.2em}
+.trust-strip a{margin-left:auto;flex-shrink:0}
+.home-partner{background:#0051c2;color:#fff}
+.host-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center;padding-block:clamp(3.5rem,8vw,7rem)}
+.host-grid h2{font-size:clamp(2.5rem,6vw,6rem);line-height:.98;letter-spacing:-.07em;margin:.55rem 0 1rem}
+.host-grid h2 em{color:#84F4B7;font-style:normal}
+.host-grid p:not(.eyebrow){font-size:1.1rem;line-height:1.65;max-width:39rem;margin:0 0 1.25rem}
+.host-grid small{display:block;margin-top:.8rem;line-height:1.5;font-size:.875rem}
+.host-checklist{background:#e9eee5;color:#102826;border-radius:1rem;padding:clamp(1.25rem,4vw,2.4rem)}
+.host-checklist ol{list-style:decimal;padding-left:1.4rem;margin:.8rem 0 1.35rem;line-height:1.6}
+.host-checklist li{margin-bottom:.6rem}
+.final-cta .app-buttons{justify-content:center}
+.final-cta .secondary-app{color:inherit}
+#btm .hero-ios{color:inherit;border-color:currentColor}
+@media(max-width:850px){.route-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.host-grid{grid-template-columns:1fr}.trust-strip{flex-wrap:wrap}.trust-strip a{margin-left:0}}
+@media(max-width:440px){.role-tabs button{padding-inline:.35rem;min-width:0}.role-tabs button span{display:none}.route-flow{grid-template-columns:1fr}.hero-actions,.app-buttons{align-items:stretch}.hero-actions a,.app-buttons a{min-height:44px}.trust-strip a{flex-shrink:1}}
+
+/* Small refinements to the existing design, 23 November 2026. */
+.role-tabs button{justify-content:flex-start;min-height:64px;gap:.6rem;padding:1rem .75rem;font-size:clamp(.875rem,1.3vw,1rem)}
+.role-tabs button>span:first-child,.role-tabs button>span:last-child{margin-left:0;font-size:.875rem;flex:0 0 auto;opacity:.55}
+.role-panel{gap:clamp(1.75rem,4vw,3rem)}
+.role-panel:focus-visible{outline:3px solid var(--blue);outline-offset:8px;border-radius:8px}
+.role-copy>p:not(.eyebrow){font-size:1rem;line-height:1.7;margin-bottom:1.5rem}
+.role-copy small{font-size:.8125rem;max-width:430px;line-height:1.6}
+.role-copy .app-buttons{gap:.6rem}
+.role-copy .button{min-height:48px}
+.route-flow{gap:1rem;align-items:stretch}
+.route-flow li{padding:1.35rem;border-radius:14px}
+.route-icon{width:3rem;height:3rem;border-radius:.8rem;margin-bottom:1.1rem}
+.route-icon svg{width:1.85rem;height:1.85rem}
+.route-flow h3{font-size:1.125rem;font-weight:750;line-height:1.3;min-height:2.6em;margin-bottom:.6rem}
+.route-flow p{font-size:1rem;line-height:1.6}
+.trust-strip{padding:1.25rem 1.4rem;gap:1.1rem}
+.trust-strip strong{display:block;margin-bottom:.25rem}
+.trust-strip a{font-size:.875rem;line-height:1.5}
+@media(max-width:800px){.role-tabs button{min-height:60px;font-size:.875rem}.role-copy h3{margin-bottom:1rem}.role-panel{gap:1.6rem}.route-flow h3{min-height:0}}
+@media(max-width:440px){.role-tabs button{font-size:.875rem;padding:.85rem .45rem}.route-flow li{padding:1.25rem}.trust-strip{padding:1.25rem}.role-copy .app-buttons{align-items:stretch}.role-copy .app-buttons .button{width:100%;justify-content:center}}
+
+/* Rotate only the drum contents; the cabinet, rim and glass stay still. */
+.drum-inner{isolation:isolate;overflow:hidden;overflow:clip}
+.drum-load{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+.drum-load .shirt{transition:none;animation:none!important}
+.drum-load .shirt-one{transform:rotate(-20deg)}
+.drum-load .shirt-two{transform:rotate(35deg)}
+.drum-load .drum-swoosh{position:absolute;inset:8px;border:3px dashed #b7d8de40;border-radius:50%;pointer-events:none}
+.drum-inner:after{z-index:2}
+.spin-button{min-height:44px;font-size:.8125rem}
+.motion-control{min-height:44px;font-size:.8125rem}
+.role-panel>*{min-width:0}
+.role-image.customer-vector{min-width:0;min-height:0;width:100%}
+.motion-control span{display:inline-block;width:10px;height:12px;font-size:0;border-left:3px solid currentColor;border-right:3px solid currentColor;vertical-align:middle}
+.motion-control[aria-pressed="true"] span{width:0;height:0;border:6px solid transparent;border-left:10px solid currentColor;border-right:0}

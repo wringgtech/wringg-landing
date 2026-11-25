@@ -42,3 +42,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated from src/app/download-links.ts by predev/prebuild
+/public/marketing-download-links.js

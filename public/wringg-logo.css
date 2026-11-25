@@ -1,0 +1,4 @@
+/* The original artwork renders with transparent white, without generated edges. */
+img[src*="wringg-logo-original-v13.svg"]{display:block;mix-blend-mode:normal;background:transparent;aspect-ratio:10998/2838;height:auto;object-fit:contain;object-position:center;transform:none;animation:none;filter:none}
+/* A solid header avoids backdrop recompositing beside the animated hero. */
+.site-header{background:#f7f6f0;-webkit-backdrop-filter:none;backdrop-filter:none}

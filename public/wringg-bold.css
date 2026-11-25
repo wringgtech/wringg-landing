@@ -1,0 +1,63 @@
+/* Audience campaign and compact home-partner invitation. */
+#network.network-remix{background:#064ee2;color:#f7f6f0;overflow:hidden}
+#network.network-remix>.section-wrap{padding-block:64px}
+.network-remix .network-heading{display:flex;justify-content:space-between;align-items:center;gap:36px;margin-bottom:32px}
+.network-remix .network-heading .eyebrow{font-size:12px;letter-spacing:1.6px;color:#94f2bc;margin-bottom:12px}
+.network-remix .network-heading h2{font-size:clamp(42px,4.8vw,68px);margin:0;letter-spacing:-.065em;line-height:1.04}
+.network-remix .network-heading h2 em{font:inherit;color:#94f2bc}
+.role-dial-wrap{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.role-dial-wrap>p{font-size:14px;line-height:1.6;margin:0;max-width:135px}
+.role-dial-wrap>p strong{display:block;color:#94f2bc;font-weight:800}
+.role-dial{width:92px;height:92px;position:relative;border:8px solid #f7f6f0;border-radius:50%;background:#e1e9df;color:#102925;box-shadow:5px 5px 0 #073692,inset 2px 3px 6px #a5bba8;cursor:pointer;flex-shrink:0}
+.role-dial .dial-pointer{position:absolute;inset:3px;border-radius:50%;transform:rotate(-45deg);transition:transform .4s cubic-bezier(.22,.7,.3,1)}
+.role-dial .dial-pointer:before{content:"";position:absolute;left:calc(50% - 3px);top:3px;width:6px;height:16px;background:#064ee2;border-radius:3px}
+.role-dial .dial-position{display:block;margin-top:17px;font-size:17px;font-weight:850;letter-spacing:-1px}
+.role-dial:hover{background:#94f2bc}.role-dial:focus-visible{outline:3px solid #94f2bc;outline-offset:8px}
+#network.network-remix .role-tabs{display:flex;gap:10px;flex-wrap:wrap;border:0;margin:0 0 28px}
+#network.network-remix .role-tabs button{display:flex;align-items:center;justify-content:center;flex:1;padding:14px 16px;min-height:52px;border:1px solid #dbe8ff70;background:#064ee2;color:#f7f6f0;border-radius:100px;font-size:14px;line-height:1.35;transition:background .2s,color .2s;gap:10px;white-space:nowrap}
+#network.network-remix .role-tabs button[aria-selected=true]{background:#94f2bc;border-color:#94f2bc;color:#102925;box-shadow:0 4px 0 #063496}
+#network.network-remix .role-tabs button:hover{border-color:#94f2bc}
+#network.network-remix .role-tabs button:focus-visible{outline:3px solid #f7f6f0;outline-offset:4px}
+#network.network-remix .role-tabs svg{width:23px;height:23px;flex-shrink:0}
+#network.network-remix .role-stage{border-top:1px solid #dbe8ff60;border-bottom:1px solid #dbe8ff60}
+#network.network-remix .role-panel{display:grid;grid-template-columns:.95fr 1.05fr;gap:15px;align-items:center;position:relative;min-height:420px;margin:0}
+#network.network-remix .role-panel:focus-visible{outline-color:#94f2bc;outline-offset:8px}
+#network.network-remix .role-copy{position:relative;z-index:2;padding:30px 0;max-width:490px;animation:role-copy-in .35s ease both}
+#network.network-remix .role-copy .eyebrow{font-size:12px;letter-spacing:1.3px;color:#94f2bc;margin-bottom:18px}
+#network.network-remix .role-copy h3{font-size:clamp(40px,4.4vw,64px);line-height:1.02;font-weight:850;letter-spacing:-.06em;margin-bottom:22px;white-space:normal}
+#network.network-remix .role-copy h3 em{font-style:normal;color:#94f2bc}
+#network.network-remix .role-copy>p:not(.eyebrow){color:#edf3ff;font-size:16px;line-height:1.7;max-width:420px;margin-bottom:25px}
+#network.network-remix .role-copy small{font-size:12px;line-height:1.6;color:#d6e3ff;max-width:430px;margin-top:16px}
+#network.network-remix .role-copy .button{background:#94f2bc;color:#102925;min-height:50px;border-radius:6px;font-size:14px;padding:16px 20px}
+#network.network-remix .role-copy .button:hover{background:#f7f6f0}
+#network.network-remix .role-copy .button.secondary-app{border:1px solid #f7f6f0;color:#f7f6f0;background:transparent}
+#network.network-remix .role-copy .button:focus-visible{outline:3px solid #f7f6f0;outline-offset:4px}
+.role-campaign-art{position:relative;align-self:stretch;min-width:0;isolation:isolate;display:flex;align-items:center;overflow:hidden}
+.role-campaign-art img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;animation:role-art-in .45s ease both}
+.campaign-sticker{position:absolute;right:12px;bottom:20px;background:#94f2bc;color:#102925;padding:10px 17px;font-size:clamp(18px,2.1vw,29px);font-weight:850;letter-spacing:-1.3px;line-height:1.1;transform:rotate(-7deg);box-shadow:5px 5px 0 #102925;border:1px solid #102925}
+.network-remix .network-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:22px;font-size:12px;letter-spacing:.9px;color:#e7efff}
+.network-remix .network-footer strong{color:#94f2bc;letter-spacing:1.6px}
+.home-partner.partner-remix{background:#94f2bc;border:0;color:#102925;overflow:hidden;position:relative}
+.home-partner.partner-remix>.section-wrap{padding-block:55px;display:grid;grid-template-columns:1.2fr 1fr;gap:65px;align-items:center}
+.home-partner.partner-remix .eyebrow{color:#064ee2;font-size:12px;margin-bottom:14px}
+.home-partner.partner-remix h2{font-size:clamp(38px,4.5vw,64px);line-height:1.04;color:#064ee2;letter-spacing:-.065em;margin:0 0 18px}
+.home-partner.partner-remix h2 em{display:inline;font:inherit;color:#102925}
+.partner-pitch>p:not(.eyebrow){font-size:16px;line-height:1.7;max-width:500px;margin:0}
+.partner-stub{border-left:2px dashed #064ee280;padding-left:36px;position:relative}
+.partner-stub>p{font-size:14px;line-height:1.6;margin:0 0 20px;font-weight:750}
+.partner-stub .button{background:#064ee2;color:#fff;min-height:52px;font-size:14px;line-height:1.4;padding:16px 22px;border-radius:6px;display:inline-flex}
+.partner-stub .button:hover{background:#102925}
+.partner-stub .button:focus-visible,.partner-stub summary:focus-visible,.partner-business-link:focus-visible{outline:3px solid #064ee2;outline-offset:4px}
+.partner-stub small{display:block;font-size:12px;line-height:1.6;margin-top:12px;max-width:370px}
+.partner-requirements{margin-top:20px;border-top:1px solid #10292540;padding-top:13px}
+.partner-requirements summary{font-size:14px;font-weight:750;cursor:pointer;min-height:36px;line-height:1.6;list-style:disclosure-closed}
+.partner-requirements[open] summary{list-style:disclosure-open}
+.partner-requirements ul{padding-left:18px;font-size:14px;line-height:1.65;margin:8px 0 16px}
+.partner-requirements li{margin-bottom:5px}
+.partner-business-link{font-size:12px;line-height:1.5;display:inline-block;text-decoration:underline;text-underline-offset:4px}
+@keyframes role-copy-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes role-art-in{from{opacity:.3;transform:scale(.96) rotate(-2deg)}to{opacity:1;transform:none}}
+@media(max-width:1000px){#network.network-remix .role-tabs{display:grid;grid-template-columns:1fr 1fr}#network.network-remix .role-panel{grid-template-columns:1fr 1fr}.role-dial-wrap>p{max-width:100px}.network-remix .network-heading h2{font-size:50px}#network.network-remix .role-tabs button{padding:12px;font-size:13px;gap:7px}#network.network-remix .role-copy h3{font-size:48px}.home-partner.partner-remix>.section-wrap{gap:35px}.partner-stub{padding-left:25px}}
+@media(max-width:760px){#network.network-remix>.section-wrap{padding-block:45px}.network-remix .network-heading{gap:15px;margin-bottom:25px}.network-remix .network-heading h2{font-size:38px}.role-dial-wrap{gap:0}.role-dial-wrap>p{display:none}.role-dial{width:72px;height:72px;border-width:6px}.role-dial .dial-position{font-size:14px;margin-top:15px}.role-dial .dial-pointer:before{height:11px;width:5px}.network-remix .network-heading .eyebrow{font-size:11px}#network.network-remix .role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:22px}#network.network-remix .role-tabs button{min-height:52px;padding:10px 9px;font-size:13px;white-space:normal;justify-content:flex-start;border-radius:8px;text-align:left}#network.network-remix .role-panel{grid-template-columns:1fr;gap:0;min-height:0}#network.network-remix .role-copy{max-width:none;padding:27px 0 15px}#network.network-remix .role-copy h3{font-size:46px;max-width:440px;margin-bottom:16px}#network.network-remix .role-copy>p:not(.eyebrow){font-size:16px;line-height:1.65;margin-bottom:20px}.role-campaign-art{max-height:330px;justify-content:center}.role-campaign-art img{max-width:440px}.campaign-sticker{font-size:23px;bottom:15px;right:15px}.network-remix .network-footer{flex-wrap:wrap;font-size:11px;gap:8px;line-height:1.6}.home-partner.partner-remix>.section-wrap{grid-template-columns:1fr;gap:27px;padding-block:45px}.partner-stub{border-left:0;border-top:2px dashed #064ee280;padding:25px 0 0}.home-partner.partner-remix h2{font-size:45px}.partner-stub>p{margin-bottom:16px}}
+@media(max-width:380px){.network-remix .network-heading h2{font-size:33px}.role-dial{width:62px;height:62px}.role-dial .dial-position{font-size:12px}.role-dial .dial-pointer:before{height:8px}#network.network-remix .role-copy h3{font-size:39px}#network.network-remix .role-tabs button{font-size:12px;gap:6px}#network.network-remix .role-tabs svg{width:20px;height:20px}.role-campaign-art{max-height:260px}.home-partner.partner-remix h2{font-size:39px}}
+@media(prefers-reduced-motion:reduce){.role-dial .dial-pointer,#network.network-remix .role-tabs button{transition:none}#network.network-remix .role-copy,.role-campaign-art img{animation:none}}

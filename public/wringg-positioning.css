@@ -1,0 +1,28 @@
+/* A lighter homepage: the service first, details on the care page. */
+#story{padding-block:60px}
+#story .section-intro{margin-bottom:22px}
+#story .section-intro .eyebrow{font-size:12px;color:#064ee2}
+#story h2{font-size:clamp(46px,5.7vw,76px);margin-bottom:32px}
+#story .story-star{right:4%;font-size:110px}
+#story .door{min-height:365px;padding:22px 24px 0}
+#story .door-label{font-size:12px;margin:22px 0 24px}
+#story .door h3{font-size:34px}
+#story .door p{font-size:16px;line-height:1.6;margin:0 auto;max-width:440px}
+#story .door-customer{background:#e8eee4}
+#story .door-partner{background:#94f2bc}
+#story .door-art{height:180px}
+#story .story-caption{align-items:center;margin-top:26px;gap:28px}
+.care-inclusions{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+.care-inclusions span{font-size:14px;font-weight:700;display:inline-flex;gap:8px;align-items:center}
+.care-inclusions span:before{content:'✓';display:inline-grid;place-items:center;color:#064ee2;font-size:19px}
+#story .story-pricing-link{flex-shrink:0;background:#064ee2;color:#fff;font-size:14px;padding:16px 22px;min-height:50px;border-radius:6px}
+#story .story-pricing-link:hover{background:#102925}
+#story .story-pricing-link:focus-visible{outline:3px solid #064ee2;outline-offset:5px}
+#network.network-remix .role-copy .earning-potential{margin:17px 0 0;max-width:435px;border-top:1px solid #ffffff55;padding-top:14px}
+#network.network-remix .role-copy .earning-potential strong{display:block;color:#94f2bc;font-size:22px;letter-spacing:-.7px;line-height:1.25;margin-bottom:8px}
+#network.network-remix .role-copy .earning-potential span{display:block;font-size:13px;line-height:1.6;color:#e7efff}
+#network.network-remix .role-copy small a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){#story .story-caption{align-items:start;flex-direction:column}#story .door h3{font-size:29px}#story .story-star{right:0;font-size:85px}}
+@media(max-width:600px){#story{padding-block:45px}#story h2{font-size:43px;margin-bottom:26px}#story .story-star{display:none}#story .door{min-height:340px;border-radius:100px 100px 8px 8px;padding-inline:20px}#story .story-pricing-link{font-size:14px;white-space:normal}.care-inclusions{gap:12px;font-size:13px}}
+
+#network .special-care-link{display:flex;flex-wrap:wrap;gap:7px;margin:-7px 0 22px;font-size:13px;font-weight:700;color:#94f2bc;text-decoration:none}#network .special-care-link span{border:1px solid #94f2bc80;border-radius:99px;padding:7px 11px}#network .special-care-link:hover span{background:#94f2bc;color:#102925}#network .special-care-link:focus-visible{outline:3px solid #94f2bc;outline-offset:5px}
